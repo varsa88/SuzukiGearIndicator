@@ -146,26 +146,12 @@ void loop() {
   analogWrite(PWM_PIN, outputDuty);
 
 #ifdef UseSerial
-  // send data only when you receive data:
-  while (Serial.available()) {
-    char c = Serial.read();  //gets one byte from serial buffer
-    readString += c; //makes the string readString
-    delay(2);  //slow looping to allow buffer to fill with next character
-  }
-
-  if (readString.length() > 0) {
-    Serial.println(readString);  //so you can see the captured string
-    int n = readString.toInt();  //convert readString into a number
-    readString=""; //empty for next input
-    // Serial.print("I received: ");
-    // Serial.println(n, DEC);
-    Serial.print("inputVoltage: ");
-    Serial.println(inputVoltage);
-    Serial.print("currentGear: ");
-    Serial.println(currentGear);
-    Serial.print("outputVoltage: ");
-    Serial.println(outputVoltage);
-  }
+  Serial.print("inputVoltage: ");
+  Serial.println(inputVoltage);
+  Serial.print("currentGear: ");
+  Serial.println(currentGear);
+  Serial.print("outputVoltage: ");
+  Serial.println(outputVoltage);
 #endif
 #ifdef UseDisplay
   sevseg.refreshDisplay(); // Must run repeatedly; don't use blocking code (ex: delay()) in the loop() function or this won't work right

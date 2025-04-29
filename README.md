@@ -26,7 +26,11 @@ An Arduino-based gear position indicator for Suzuki motorcycles. This project pr
 ## Usage
 - The gear position is displayed on the 7-segment display (if connected).
 - The PWM output provides a modified voltage corresponding to the detected gear.
-- Use the serial monitor for debugging and configuration.
+- Use the serial monitor for debugging purposes.
+
+## Documentation
+
+For detailed information about the circuit diagram, refer to the [Circuit Diagram](docs/circuit_diagram.md).
 
 ## License
 This project is licensed under the terms specified in the `LICENSE` file.
